@@ -9,7 +9,7 @@ function errorHandler(err, req, res, next) {
     process.env.NODE_ENV === "development" ? err : { message: err.message };
 
   res.status(err.status || 500);
-  console.log(res.locals.html);
+
   if (res.locals.html) {
     res.render("error", {
       title: "Error page",
