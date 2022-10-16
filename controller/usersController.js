@@ -6,7 +6,6 @@ const path = require("path");
 async function getUsers(req, res, next) {
   try {
     const users = await User.find();
-    console.log(users);
     res.locals.users = users;
     res.render("users", users);
   } catch (error) {
